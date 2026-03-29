@@ -17,28 +17,28 @@ public class UpdateCommand implements Command {
 
     @Override
     public void execute(String... args) {
-        String idInput;
-        if (args.length > 0) {
-            idInput = args[0];
-        } else {
-            idInput = "";
-        }
         Route r = null;
+        System.out.println("Введите id:");
         while (true) {
             try {
-                if (idInput.isEmpty()) {
-                    idInput = scan.nextLine().trim();
-                    if (idInput.isEmpty()) continue;
+                String idInput = scan.nextLine().trim();
+                if (!idInput.isEmpty()) {
+                    int id = Integer.parseInt(idInput);
+                    r = manager.findId(id);
+                    if (r != null) break;
+                    else{
+                        System.out.println("Ошибка: маршрут не найден. Введите другой ID:");
+                        continue;
+                    }
+
                 }
-                int id = Integer.parseInt(idInput);
-                r = manager.findId(id);
-                if (r != null) break;
-                System.out.println("Ошибка: маршрут не найден. Введите другой ID:");
-                idInput = "";// сброс ввода
+                System.out.println("id не может быть пустым");
+
+
 
             } catch (NumberFormatException e) {
                 System.out.println("Ошибка: ID должен быть числом!");
-                idInput = ""; // сброс ввода
+
             }
         }
         System.out.println("Обновление маршрута " + r.getId());

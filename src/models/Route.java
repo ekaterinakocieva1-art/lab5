@@ -29,15 +29,16 @@ public class Route implements Validate, Comparable<Route> {
     public Route(int id,String name, Coordinates coordinates, Location from, Location to, long distance){
         this(id, name, coordinates, LocalDateTime.now(), from, to, distance);
     }
+    public Route(){}
 
     @Override
     public boolean validate(){
         if (id <= 0) return false;
         if (name == null || name.isEmpty()) return false;
-        if (coordinates == null) return false;
+        if (coordinates == null || !coordinates.validate()) return false;
         if (creationDate == null) return false;
-        if (from == null) return false;
-        if (to == null) return false;
+        if (from == null || !from.validate()) return false;
+        if (to == null || !to.validate()) return false;
         if (distance <= 1) return false;
         return true;
     }
@@ -109,4 +110,11 @@ public class Route implements Validate, Comparable<Route> {
         return Objects.hash(id, name, coordinates, creationDate, from, to, distance);
     }
 
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
 }

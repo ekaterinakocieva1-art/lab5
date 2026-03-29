@@ -1,9 +1,18 @@
 package commands;
 
+import managers.CollectionManager;
+import models.Route;
+
 public class ShowCommand implements Command{
+    private CollectionManager manager;
+    public ShowCommand(CollectionManager manager){
+        this.manager = manager;
+    }
     @Override
     public void execute(String ... args){
-        System.out.println("show works");
+        for(Route r : manager.getList()){
+            System.out.println(r);
+        }
     }
 
     @Override

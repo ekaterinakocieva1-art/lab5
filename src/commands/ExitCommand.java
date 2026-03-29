@@ -3,7 +3,7 @@ package commands;
 public class ExitCommand implements Command{
     @Override
     public void execute(String ... args){
-        System.out.println("exit works");
+        System.exit(0);
     }
 
     @Override

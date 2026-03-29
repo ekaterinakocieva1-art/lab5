@@ -1,10 +1,18 @@
 package commands;
 
+import managers.CollectionManager;
+
 public class ClearCommand implements Command{
+    private CollectionManager manager;
+    public ClearCommand(CollectionManager manager){
+        this.manager = manager;
+    }
     @Override
     public void execute(String ... args){
-        System.out.println("clear works");
+        manager.clear();
+        System.out.println("Очищаем коллекцию");
     }
+
 
     @Override
     public String getName(){

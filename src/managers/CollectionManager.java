@@ -1,9 +1,12 @@
 package managers;
 
+import exeptions.RouteNotFoundException;
+import exeptions.ValidationException;
 import models.Coordinates;
 import models.Location;
 import models.Route;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,19 +14,8 @@ import java.util.List;
 
 public class CollectionManager {
     public HashSet<Route> list = new HashSet<>();
-    private int counter;
+    private int counter = 1;
     public CollectionManager(){
-        Coordinates coords1 = new Coordinates(10.5f, 200L);
-        Location from1 = new Location(0, 0.0, 0.0);
-        Location to1 = new Location(100, 50.5, 10.0);
-        Route route1 = new Route(1,"Москва - Питер", coords1, from1, to1, 700L);
-        list.add(route1);
-
-        Coordinates coords2 = new Coordinates(5.0f, -100L);
-        Location from2 = new Location(10, 20.0, 5.0);
-        Location to2 = new Location(30, 40.0, 15.0);
-        Route route2 = new Route(2, "Казань - Уфа", coords2, from2, to2,500L);
-        list.add(route2);
     }
     // метод поиска маршрута по его id
     public Route findId(int id){
@@ -35,7 +27,12 @@ public class CollectionManager {
         return null;
     }
     public void add(Route route){
-        route.setId(++counter);
+        route.setCreationDate(LocalDateTime.now());
+        route.setId(counter);
+        if(!route.validate()){
+            throw new ValidationException("некорректный маршрут");
+        }
+        ++counter;
         list.add(route);
     }
 
@@ -48,11 +45,12 @@ public class CollectionManager {
     public void remove(int id){
         Route route = findId(id);
         if(route == null){
-            throw new IllegalArgumentException("Incorrect id, route not found");
+            throw new RouteNotFoundException("Incorrect id, route not found");
         }
-        list.remove(id);
+        list.remove(route);
     }
     public void clear(){
+        counter = 1;
         list.clear();
     }
     public void addIfMax(Route route) {
@@ -115,6 +113,13 @@ public class CollectionManager {
         return list;
     }
     public void load(HashSet<Route> routes){
+        for(Route r : routes){
+            if(counter < r.getId()){
+                counter = r.getId();
+            }
+        }
+        counter++;
         list = routes;
     }
+
 }

@@ -11,6 +11,7 @@ public class Coordinates implements Validate {
         this.x = x;
         this.y = y;
     }
+    public Coordinates(){}
     public Float getX(){
         return x;
     }
@@ -20,7 +21,7 @@ public class Coordinates implements Validate {
     @Override
     public boolean validate(){
         if (x == null | x > 685) return  false;
-        if (y == null | y < -685) return  false;
+        if (y == null | y < -617) return  false;
         return true;
     }
 
@@ -34,5 +35,13 @@ public class Coordinates implements Validate {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    public void setX(Float x) {
+        this.x = x;
+    }
+
+    public void setY(Long y) {
+        this.y = y;
     }
 }

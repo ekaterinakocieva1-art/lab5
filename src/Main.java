@@ -16,26 +16,19 @@ public class Main {
         commandInvoker.register(new HelpCommand(commandInvoker));
         commandInvoker.register(new SaveCommand(collectionManager));
         commandInvoker.register(new LoadCommand(collectionManager));
+        commandInvoker.register(new AddCommand(collectionManager,scanner));
+        commandInvoker.register(new ShowCommand(collectionManager));
+        commandInvoker.register(new RemoveCommand(collectionManager,scanner));
+        commandInvoker.register(new ExitCommand());
+        commandInvoker.register(new ClearCommand(collectionManager));
         commandInvoker.execute("load");
         while(true){
             String commandName = scanner.nextLine();
-            if (commandName.equals("update")){
-                try {
-                    System.out.println("Введите id");
-                    String id = scanner.next();
-                    commandInvoker.execute(commandName, id);
-                }
-                catch (IllegalArgumentException exc){
-                    System.out.println("Введен неверный id");
-                }
-
-            } else if (commandName.equals("info")) {
-                commandInvoker.execute(commandName);
-            } else if (commandName.equals("help")) {
-                commandInvoker.execute(commandName);
-            } else if (commandName.equals("save")){
+            if(!commandName.isEmpty()){
                 commandInvoker.execute(commandName);
             }
+
+
 
 
         }
