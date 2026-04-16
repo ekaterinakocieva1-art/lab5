@@ -4,7 +4,6 @@ package models;
 import utility.Validate;
 
 import java.time.LocalDateTime;
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Route implements Validate, Comparable<Route> {
@@ -70,23 +69,38 @@ public class Route implements Validate, Comparable<Route> {
         return distance;
     }
     public void setId(int id){
+        if (id < 0) {
+            throw new IllegalArgumentException("id должен быть больше 0");
+        }
         this.id = id;
     }
 
 
     public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Имя не может быть пустым");
+        }
         this.name = name;
     }
 
     public void setDistance(long distance) {
+        if (distance < 1) {
+            throw new IllegalArgumentException("Дистанция должна быть больше 1");
+        }
         this.distance = distance;
     }
 
     public void setFrom(Location from) {
+        if(from == null){
+            throw new IllegalArgumentException("значение поля from не может быть null");
+        }
         this.from = from;
     }
 
     public void setTo(Location to) {
+        if(to == null){
+            throw new IllegalArgumentException("значение поля to не может быть null");
+        }
         this.to = to;
     }
     @Override
@@ -95,7 +109,7 @@ public class Route implements Validate, Comparable<Route> {
     }
     @Override
     public int compareTo(Route o){
-        return name.compareTo(o.name);
+        return Long.compare(this.distance, o.distance);
     }
 
     @Override
@@ -111,10 +125,16 @@ public class Route implements Validate, Comparable<Route> {
     }
 
     public void setCoordinates(Coordinates coordinates) {
+        if(coordinates == null){
+            throw new IllegalArgumentException("значение поля coordinates не может быть null");
+        }
         this.coordinates = coordinates;
     }
 
     public void setCreationDate(LocalDateTime creationDate) {
+        if(creationDate == null){
+            throw new IllegalArgumentException("значение поля creationDate не может быть null");
+        }
         this.creationDate = creationDate;
     }
 }

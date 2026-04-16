@@ -1,11 +1,14 @@
 package managers;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import exeptions.RouteNotFoundException;
 import exeptions.ValidationException;
-import models.Coordinates;
-import models.Location;
 import models.Route;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,9 +17,17 @@ import java.util.List;
 
 public class CollectionManager {
     public HashSet<Route> list = new HashSet<>();
+    private LocalDateTime lastInitTime;
+    private String fileName;
     private int counter = 1;
     public CollectionManager(){
     }
+
+    public CollectionManager(String fileName) {
+        this.fileName = fileName;
+        this.lastInitTime = LocalDateTime.now();
+    }
+
     // метод поиска маршрута по его id
     public Route findId(int id){
         for (Route r : list) {
@@ -37,9 +48,15 @@ public class CollectionManager {
     }
 
     public void update(int id, Route newRoute){
-        list.remove(id);
-        newRoute.setId(id);
-        list.add(newRoute);
+        Route oldRoute = findId(id);
+        if (oldRoute != null) {
+            list.remove(oldRoute);
+            newRoute.setId(id);
+            newRoute.setCreationDate(LocalDateTime.now());
+            list.add(newRoute);
+        } else {
+            throw new RouteNotFoundException("Маршрут с таким ID не найден");
+        }
 
     }
     public void remove(int id){
@@ -121,5 +138,51 @@ public class CollectionManager {
         counter++;
         list = routes;
     }
+    public void save() {
+        if (this.fileName == null) {
+            System.err.println("Ошибка: Путь к файлу не определен!");
+            return;
+        }
+
+        java.io.File file = new java.io.File(this.fileName);
+
+        // 1. Проверка папки
+        java.io.File parentDir = file.getParentFile();
+        if (parentDir != null && !parentDir.exists()) {
+            System.err.println("Ошибка: Папка не существует: " + parentDir.getAbsolutePath());
+            return;
+        }
+
+        // 2. Проверка прав
+        if (file.exists() && !file.canWrite()) {
+            System.err.println("Ошибка: Нет прав на запись в файл!");
+            return;
+        }
+
+        // 3. Запись
+        try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file))) {
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(LocalDateTime.class, new utility.LocalDateTimeAdapter())
+                    .setPrettyPrinting()
+                    .create();
+
+            // Превращаем список из менеджера в JSON
+            String json = gson.toJson(this.getList());
+            writer.write(json);
+
+            System.out.println("Коллекция успешно сохранена в: " + file.getAbsolutePath());
+        } catch (IOException e) {
+            System.err.println("Ошибка при записи в файл: " + e.getMessage());
+        }
+    }
+    public String getInfo() {
+        return "Сведения о коллекции:\n" +
+                "  Тип: " + list.getClass().getSimpleName() + "\n" +
+                "  Тип элементов: " + Route.class.getSimpleName() + "\n" +
+                "  Дата инициализации: " + lastInitTime + "\n" +
+                "  Количество элементов: " + list.size() + "\n" +
+                "  Путь к файлу: " + (fileName != null ? fileName : "не задан");
+    }
+
 
 }

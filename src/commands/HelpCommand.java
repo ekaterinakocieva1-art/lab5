@@ -1,18 +1,27 @@
 package commands;
 
 
+import managers.CollectionManager;
 import managers.CommandInvoker;
+import utility.InteractiveInputReader;
 
-public class HelpCommand implements Command{
+public class HelpCommand extends Command{
     private CommandInvoker commandInvoker;
 
 
-    public HelpCommand(CommandInvoker invoker){
-        this.commandInvoker = invoker;
+    public HelpCommand(CommandInvoker commandInvoker,CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
+        this.commandInvoker = commandInvoker;
+
     }
 
     @Override
-    public void execute(String ... args){
+    public void execute(String args) {
+
+    }
+
+    @Override
+    public void execute(){
         for(Command cmd: commandInvoker.getCommands().values()){
             System.out.println(cmd.getName() + ":" + cmd.getDiscription());
         }

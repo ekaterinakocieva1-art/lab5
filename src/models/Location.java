@@ -13,6 +13,11 @@ public class Location implements Validate {
         this.y = y;
         this.z = z;
     }
+
+    public Location() {
+
+    }
+
     public Integer getX(){
         return x;
     }
@@ -39,5 +44,17 @@ public class Location implements Validate {
     @Override
     public int hashCode() {
         return Objects.hash(x, y, z);
+    }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public void setY(Double y) {
+        this.y = y;
+    }
+
+    public void setZ(double z) {
+        this.z = z;
     }
 }

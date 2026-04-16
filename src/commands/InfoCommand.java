@@ -1,20 +1,23 @@
 package commands;
 
 import managers.CollectionManager;
+import utility.InteractiveInputReader;
 
-import java.util.Scanner;
 
-public class InfoCommand implements Command {
-    private CollectionManager manager;
-    private Scanner scan;
-    public InfoCommand(CollectionManager manager, Scanner scan){
-        this.manager = manager;
-        this.scan = scan;
+public class InfoCommand extends Command {
+
+    public InfoCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
     }
 
     @Override
-    public void execute(String ... args){
-        System.out.println("info works");
+    public void execute(String args) {
+
+    }
+
+    @Override
+    public void execute(){
+        System.out.println(manager.getInfo());
     }
 
     @Override

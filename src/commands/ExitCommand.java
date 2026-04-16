@@ -1,8 +1,20 @@
 package commands;
 
-public class ExitCommand implements Command{
+import managers.CollectionManager;
+import utility.InteractiveInputReader;
+
+public class ExitCommand extends Command{
+    public ExitCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
+    }
+
     @Override
-    public void execute(String ... args){
+    public void execute(String args) {
+
+    }
+
+    @Override
+    public void execute(){
         System.exit(0);
     }
 

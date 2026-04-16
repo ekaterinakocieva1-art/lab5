@@ -1,42 +1,43 @@
 package commands;
 
 import managers.CollectionManager;
+import utility.InteractiveInputReader;
 
 import java.util.Scanner;
 
-public class RemoveCommand implements Command{
-    private CollectionManager manager;
-    private Scanner scan;
+public class RemoveCommand extends Command{
 
-    public RemoveCommand(CollectionManager manager, Scanner scan) {
-        this.manager = manager;
-        this.scan = scan;
+    public RemoveCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
     }
+
     @Override
-    public void execute(String ... args){
-        System.out.println("Введите id:");
+    public void execute(String args) {
         int id;
-        while (true) {
-            try {
-                String idInput = scan.nextLine().trim();
-                if (!idInput.isEmpty()) {
-                    id = Integer.parseInt(idInput);
-                    if (manager.findId(id) != null) break;
-                    else{
-                        System.out.println("Ошибка: маршрут не найден. Введите другой ID:");
-                        continue;
-                    }
+        try{
 
+            if (!args.isEmpty()) {
+                id = Integer.parseInt(args);
+                if (manager.findId(id) == null){
+                    System.out.println("Ошибка: маршрут не найден");
+                }else {
+                    manager.remove(id);
+                    System.out.println("Маршрут удален");
                 }
+
+            }else {
                 System.out.println("id не может быть пустым");
-
-
-
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: ID должен быть числом!");
-
             }
+
+        }catch (Exception e){
+            System.out.println("Ошибка: ID должен быть числом!");
         }
+
+    }
+
+    @Override
+    public void execute(){
+        int id = readId(reader);
         manager.remove(id);
         System.out.println("Маршрут удален");
     }

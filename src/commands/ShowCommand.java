@@ -2,17 +2,28 @@ package commands;
 
 import managers.CollectionManager;
 import models.Route;
+import utility.InteractiveInputReader;
 
-public class ShowCommand implements Command{
-    private CollectionManager manager;
-    public ShowCommand(CollectionManager manager){
-        this.manager = manager;
+public class ShowCommand extends Command{
+    public ShowCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
     }
+
     @Override
-    public void execute(String ... args){
-        for(Route r : manager.getList()){
-            System.out.println(r);
+    public void execute(String args) {
+
+    }
+
+    @Override
+    public void execute(){
+        if(manager.getList().isEmpty()){
+            System.out.println("Коллекция пуста");
+        }else {
+            for(Route r : manager.getList()){
+                System.out.println(r);
+            }
         }
+
     }
 
     @Override

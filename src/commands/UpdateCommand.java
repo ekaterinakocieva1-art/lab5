@@ -1,161 +1,59 @@
 package commands;
-
 import managers.CollectionManager;
+import models.Coordinates;
 import models.Location;
 import models.Route;
+import utility.InteractiveInputReader;
 import java.util.Scanner;
 
 
-public class UpdateCommand implements Command {
-    private CollectionManager manager;
-    private Scanner scan;
-
-    public UpdateCommand(CollectionManager manager, Scanner scan) {
-        this.manager = manager;
-        this.scan = scan;
+public class UpdateCommand extends Command {
+    public UpdateCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
     }
 
     @Override
-    public void execute(String... args) {
-        Route r = null;
-        System.out.println("Введите id:");
-        while (true) {
-            try {
-                String idInput = scan.nextLine().trim();
-                if (!idInput.isEmpty()) {
-                    int id = Integer.parseInt(idInput);
-                    r = manager.findId(id);
-                    if (r != null) break;
-                    else{
-                        System.out.println("Ошибка: маршрут не найден. Введите другой ID:");
-                        continue;
-                    }
-
-                }
-                System.out.println("id не может быть пустым");
-
-
-
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: ID должен быть числом!");
-
+    public void execute(String args) {
+        try{
+            Route route = parseRoute(args);
+            if(manager.findId(route.getId()) != null){
+                manager.update(route.getId(), route);
+            }else{
+                System.out.println("Ошибка: маршрут с таким ID не найден");
             }
+        }catch (Exception e){
+            System.out.println("Ошибка при десериализации JSON: " + e.getMessage());
         }
-        System.out.println("Обновление маршрута " + r.getId());
-        while (true) {
-            System.out.println("Название маршрута");
-            String name = scan.nextLine().trim();
-            if (!name.isEmpty()) {
-                r.setName(name);
-                break;
-            }
-            System.out.println("Ошибка: имя не может быть пустым!");
-        }
-        while (true) {
-            try {
-                System.out.println("Дистанция");
-                long dist = Long.parseLong(scan.nextLine().trim());
-                if (dist > 1) {
-                    r.setDistance(dist);
-                    break;
-                }
-                System.out.println("Ошибка: дистанция должна быть больше 1!");
-            } catch (NumberFormatException ex) {
-                System.out.println("Ошибка: Дистанция должна быть целым числом");
-            }
-
-        }
-        Integer xF = null;
-        Double yF = null;
-        double zF = 0;
-        System.out.println("Место отправления");
-        while (true) {
-            try {
-                System.out.print("X: ");
-                String xFrom = scan.nextLine().trim();
-                if (xFrom.isEmpty()) {
-                    System.out.println("Ошибка: Поле X не может быть null!");
-                    continue;
-                }
-                xF = Integer.parseInt(xFrom);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: X должен быть целым числом!");
-            }
-        }
-        while (true) {
-            try {
-                System.out.print("Y: ");
-                String yFrom = scan.nextLine().trim();
-                if (yFrom.isEmpty()) {
-                    System.out.println("Ошибка: Поле Y не может быть null!");
-                    continue;
-                }
-                yF = Double.parseDouble(yFrom);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: Y должен быть числом!");
-            }
-        }
-        while (true) {
-            try {
-                System.out.print("Z: ");
-                String zFrom = scan.nextLine().trim();
-                zF = Double.parseDouble(zFrom);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: Z должен быть числом!");
-            }
-        }
-        r.setFrom(new Location(xF, yF, zF));
-
-        Integer xT = null;
-        Double yT = null;
-        double zT = 0;
-        System.out.println("Место прибытия");
-        while (true) {
-            try {
-                System.out.print("X: ");
-                String xTo = scan.nextLine().trim();
-                if (xTo.isEmpty()) {
-                    System.out.println("Ошибка: Поле X не может быть null!");
-                    continue;
-                }
-                xT = Integer.parseInt(xTo);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: X должен быть целым числом!");
-            }
-        }
-        while (true) {
-            try {
-                System.out.print("Y: ");
-                String yTo = scan.nextLine().trim();
-                if (yTo.isEmpty()) {
-                    System.out.println("Ошибка: Поле Y не может быть null!");
-                    continue;
-                }
-                yT = Double.parseDouble(yTo);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: Y должен быть числом!");
-            }
-        }
-        while (true) {
-            try {
-                System.out.print("Z: ");
-                String zTo = scan.nextLine().trim();
-                zT = Double.parseDouble(zTo);
-                break;
-            } catch (NumberFormatException e) {
-                System.out.println("Ошибка: Z должен быть числом!");
-            }
-        }
-        r.setTo(new Location(xT, yT, zT));
-
-        System.out.println("Данные успешно обновлены");
-        System.out.println(r);
     }
+
+    @Override
+    public void execute() {
+        Integer id = readId(reader);
+        Route route = new Route();
+        Coordinates coordinates = new Coordinates();
+        Location to = new Location();
+        Location from = new Location();
+
+        readName(reader, route);
+        readDistance(reader, route);
+
+        readCoordinatesX(reader, coordinates);
+        readCoordinatesY(reader, coordinates);
+        route.setCoordinates(coordinates);
+
+        readLocationXFrom(reader, from);
+        readLocationYFrom(reader, from);
+        readLocationZFrom(reader, from);
+        route.setFrom(from);
+
+        readLocationXTo(reader, to);
+        readLocationYTo(reader, to);
+        readLocationZTo(reader, to);
+        route.setTo(to);
+
+        manager.update(id,route);
+    }
+
 
 
     @Override

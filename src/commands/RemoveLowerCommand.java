@@ -1,16 +1,17 @@
 package commands;
+
 import managers.CollectionManager;
 import models.Coordinates;
 import models.Location;
 import models.Route;
 import utility.InteractiveInputReader;
 
-public  class AddCommand extends Command{
+public class RemoveLowerCommand extends Command{
 
-    public AddCommand(CollectionManager manager, InteractiveInputReader reader) {
+
+    public RemoveLowerCommand(CollectionManager manager, InteractiveInputReader reader){
         super(reader, manager);
     }
-
 
     @Override
     public void execute() {
@@ -35,24 +36,28 @@ public  class AddCommand extends Command{
         readLocationYTo(reader, to);
         readLocationZTo(reader, to);
         route.setTo(to);
-
-        manager.add(route);
+        int sizeBefore = manager.getList().size();
+        manager.removeLower(route);
+        int removed = sizeBefore - manager.getList().size();
+        System.out.println("Удалено элементов: " + removed);
     }
 
     @Override
-    public void execute(String args) {
+    public void execute(String args){
         Route route = parseRoute(args);
-        manager.add(route);
+        int sizeBefore = manager.getList().size();
+        manager.removeLower(route);
+        int removed = sizeBefore - manager.getList().size();
+        System.out.println("Удалено элементов: " + removed);
     }
-
 
     @Override
     public String getName(){
-        return "add";
+        return "remove_lower";
     }
 
     @Override
     public String getDiscription(){
-        return "добавить новый элемент в коллекцию";
+        return "удаляет из коллекции все элементы, меньшие, чем заданный";
     }
 }

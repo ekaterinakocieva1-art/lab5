@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import managers.CollectionManager;
 import models.Route;
+import utility.InteractiveInputReader;
 import utility.LocalDateTimeAdapter;
 
 import java.io.BufferedInputStream;
@@ -14,15 +15,19 @@ import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 
-public class LoadCommand implements Command{
-    private CollectionManager manager;
+public class LoadCommand extends Command{
 
-    public LoadCommand(CollectionManager manager) {
-        this.manager = manager;
+    public LoadCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
     }
 
     @Override
-    public void execute(String... args) {
+    public void execute(String args) {
+
+    }
+
+    @Override
+    public void execute() {
         try(BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream("routes.json"))){
             byte [] bytes = bufferedInputStream.readAllBytes();
             String json = new String(bytes);
@@ -45,6 +50,6 @@ public class LoadCommand implements Command{
 
     @Override
     public String getDiscription() {
-        return "";
+        return "загрузить коллекцию из файла";
     }
 }

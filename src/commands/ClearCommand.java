@@ -1,14 +1,20 @@
 package commands;
 
 import managers.CollectionManager;
+import utility.InteractiveInputReader;
 
-public class ClearCommand implements Command{
-    private CollectionManager manager;
-    public ClearCommand(CollectionManager manager){
-        this.manager = manager;
+public class ClearCommand extends Command{
+    public ClearCommand(CollectionManager manager, InteractiveInputReader reader){
+        super(reader, manager);
     }
+
     @Override
-    public void execute(String ... args){
+    public void execute(String args) {
+
+    }
+
+    @Override
+    public void execute(){
         manager.clear();
         System.out.println("Очищаем коллекцию");
     }
