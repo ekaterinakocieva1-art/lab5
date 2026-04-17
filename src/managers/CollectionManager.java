@@ -6,6 +6,7 @@ import exeptions.RouteNotFoundException;
 import exeptions.ValidationException;
 import models.Route;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -130,6 +131,15 @@ public class CollectionManager {
         return list;
     }
     public void load(HashSet<Route> routes){
+        if (routes == null){
+            System.out.println("Ошибка: Передана пустая коллекция");
+            return;
+        }
+        File file = new java.io.File(this.fileName);
+        if(file.exists() && !file.canRead()){
+            System.err.println("Ошибка: Нет прав на чтение файла " + fileName);
+            return;
+        }
         for(Route r : routes){
             if(counter < r.getId()){
                 counter = r.getId();

@@ -5,7 +5,7 @@ import managers.CollectionManager;
 import managers.CommandInvoker;
 import utility.InteractiveInputReader;
 
-import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -39,19 +39,27 @@ public class Main {
         commandInvoker.register(new RemoveLowerCommand(collectionManager, reader));
         commandInvoker.execute("load");
         while(true){
-            String[] line = scanner.nextLine().split(" ", 2);
-            if(line.length == 1){
-                String commandName = line[0];
-                if(!commandName.isEmpty()){
-                    commandInvoker.execute(commandName);
+            try{
+                if(!scanner.hasNextLine()){
+                    break;
                 }
-            } else if (line.length > 1) {
-                String commandName = line[0];
-                String argue = line[1];
-                if(!commandName.isEmpty()){
-                    commandInvoker.execute(commandName, argue);
+                String[] line = scanner.nextLine().split(" ", 2);
+                if(line.length == 1){
+                    String commandName = line[0];
+                    if(!commandName.isEmpty()){
+                        commandInvoker.execute(commandName);
+                    }
+                } else if (line.length > 1) {
+                    String commandName = line[0];
+                    String argue = line[1];
+                    if(!commandName.isEmpty()){
+                        commandInvoker.execute(commandName, argue);
+                    }
                 }
+            }catch (NoSuchElementException e){
+                break;
             }
+
 
         }
     }
