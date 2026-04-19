@@ -1,0 +1,10 @@
+add_if_max {"name": "Сочи - Екатеринбург","coordinates": {"x": 3.0,"y": -156},"from": {"x": 110,"y": 23.5,"z": 33.0},"to": {"x": 93,"y": 87.0,"z": 49.0},"distance": 500}
+show
+execute_script script2
+help
+info
+execute_script script3
+filter_greater_than_distance 666
+remove_lower {"name": "Ростов - Москва","coordinates": {"x": 22.0,"y": -196},"from": {"x": 120,"y": 23.8,"z": 37.7},"to": {"x": 63,"y": 8.6,"z": 46.7}
+execute_script script
+save

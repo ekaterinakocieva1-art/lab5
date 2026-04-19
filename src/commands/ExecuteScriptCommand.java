@@ -1,5 +1,6 @@
 package commands;
 
+import exeptions.CycleScriptException;
 import exeptions.ScriptExecutingError;
 import managers.CollectionManager;
 import managers.CommandInvoker;
@@ -40,6 +41,29 @@ public class ExecuteScriptCommand extends Command{
             }
         }
     }
+    private void validate(String fileName, Set<String> inStack){
+        if(inStack.contains(fileName)){
+            throw new CycleScriptException("Циклическая зависимость, скрипты не выполняются");
+        }
+        inStack.add(fileName);
+        try(Scanner scanner = new Scanner(new File(fileName))) {
+            while(scanner.hasNextLine()){
+                String[] line = scanner.nextLine().split(" ", 2);
+
+                String commandName = line[0];
+                if("execute_script".equals(commandName)){
+                    validate(line[1],inStack);
+                }
+            }
+        }
+        catch (CycleScriptException e){
+            throw new CycleScriptException("Циклическая зависимость, скрипты не выполняются");
+        }
+        catch (Exception e){
+            throw new ScriptExecutingError("Скрипт " + fileName +" написан некорректно ");
+        }
+        inStack.remove(fileName);
+    }
 
     @Override
     public void execute() {
@@ -48,24 +72,25 @@ public class ExecuteScriptCommand extends Command{
 
     @Override
     public void execute(String args) {
+        validate(args,new HashSet<>());
         try{
             start(args);
             try(Scanner scanner = new Scanner(new File(args))) {
-            while(scanner.hasNextLine()){
-                String[] line = scanner.nextLine().split(" ", 2);
-                if(line.length == 1){
-                    String commandName = line[0];
-                    if(!commandName.isEmpty()){
-                        commandInvoker.execute(commandName);
-                    }
-                } else if (line.length > 1) {
-                    String commandName = line[0];
-                    String argue = line[1];
-                    if(!commandName.isEmpty()){
-                        commandInvoker.execute(commandName, argue);
+                while(scanner.hasNextLine()){
+                    String[] line = scanner.nextLine().split(" ", 2);
+                    if(line.length == 1){
+                        String commandName = line[0];
+                        if(!commandName.isEmpty()){
+                            commandInvoker.execute(commandName);
+                        }
+                    } else if (line.length > 1) {
+                        String commandName = line[0];
+                        String argue = line[1];
+                        if(!commandName.isEmpty()){
+                            commandInvoker.execute(commandName, argue);
+                        }
                     }
                 }
-            }
             }catch (Exception e){
                 throw new ScriptExecutingError("Ошибка выполнения скрипта");
             }

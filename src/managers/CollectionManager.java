@@ -1,11 +1,9 @@
 package managers;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import exeptions.RouteNotFoundException;
 import exeptions.ValidationException;
 import models.Route;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,8 +12,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-
-
 public class CollectionManager {
     public HashSet<Route> list = new HashSet<>();
     private LocalDateTime lastInitTime;
@@ -180,7 +176,7 @@ public class CollectionManager {
             String json = gson.toJson(this.getList());
             writer.write(json);
 
-            System.out.println("Коллекция успешно сохранена в: " + file.getAbsolutePath());
+            System.out.println("Коллекция успешно сохранена в: " + file.getName());
         } catch (IOException e) {
             System.err.println("Ошибка при записи в файл: " + e.getMessage());
         }
@@ -193,6 +189,4 @@ public class CollectionManager {
                 "  Количество элементов: " + list.size() + "\n" +
                 "  Путь к файлу: " + (fileName != null ? fileName : "не задан");
     }
-
-
 }

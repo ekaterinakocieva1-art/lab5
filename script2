@@ -1,0 +1,8 @@
+add {"name": "Москва - Владикавказ","coordinates": {"x": 6.0,"y": -106},"from": {"x": 60,"y": 20.5,"z": 3.0},"to": {"x": 90,"y": 80.0,"z": 45.0},"distance": 800}
+show
+info
+execute_script script
+update {"id": 3, "name": "Владивосток - Москва","coordinates": {"x": 11.0,"y": -100},"from": {"x": 10,"y": 20.0,"z": 56.0},"to": {"x": 230,"y": 40.0,"z": 15.0},"distance": 60}
+print_ascending
+save
+execute_script script3

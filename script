@@ -6,3 +6,4 @@ average_of_distance
 print_ascending
 update {"id": 3, "name": "Казань - Вологда","coordinates": {"x": 5.0,"y": -100},"from": {"x": 10,"y": 20.0,"z": 5.0},"to": {"x": 30,"y": 40.0,"z": 15.0},"distance": 900}
 show
+execute_script script2
