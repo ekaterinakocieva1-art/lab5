@@ -1,0 +1,235 @@
+2026-05-20 11:52:59 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-20 11:53:23 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:18604
+2026-05-20 11:53:23 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-20 11:53:23 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-20 11:53:28 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:18612
+2026-05-20 11:53:28 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'info'
+2026-05-20 11:53:28 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-20 11:53:46 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:18613
+2026-05-20 11:53:46 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'remove_by_id'
+2026-05-20 11:53:46 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-20 11:53:49 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:18617
+2026-05-20 11:53:49 [main] INFO  ServerNetwork - Получен запрос [ID: 4]: Команда 'show'
+2026-05-20 11:53:49 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-20 19:41:35 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-20 19:47:02 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-20 19:47:13 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-20 19:50:25 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-20 19:50:34 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-20 19:52:23 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-22 11:05:40 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-22 11:07:23 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7976
+2026-05-22 11:07:23 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'add'
+2026-05-22 11:07:23 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-22 11:07:26 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7977
+2026-05-22 11:07:26 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-22 11:07:26 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-22 11:07:32 [main] INFO  ServerNetwork - Получена команда сохранения с консоли сервера.
+2026-05-22 11:07:36 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7978
+2026-05-22 11:07:36 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-22 11:07:36 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-22 11:37:24 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 12:20:49 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 12:20:58 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1503
+2026-05-29 12:20:58 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 12:20:58 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:21:07 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1505
+2026-05-29 12:21:07 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'remove_by_id'
+2026-05-29 12:21:07 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:21:09 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1506
+2026-05-29 12:21:09 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 12:21:09 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:28:29 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 12:29:04 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 12:29:13 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41939
+2026-05-29 12:29:13 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 12:29:13 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:29:22 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41940
+2026-05-29 12:29:22 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'remove_by_id'
+2026-05-29 12:29:22 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:30:00 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41951
+2026-05-29 12:30:00 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 12:30:00 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:30:17 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41955
+2026-05-29 12:30:17 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 12:30:17 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:30:24 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 12:30:32 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 12:30:40 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41962
+2026-05-29 12:30:40 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 12:30:40 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:32:32 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 12:32:40 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 12:32:50 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41979
+2026-05-29 12:32:50 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 12:32:50 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:32:57 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41980
+2026-05-29 12:32:57 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'remove_by_id'
+2026-05-29 12:32:57 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:33:00 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41981
+2026-05-29 12:33:00 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 12:33:00 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:33:18 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 12:33:27 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 12:33:36 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:41988
+2026-05-29 12:33:36 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 12:33:36 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:34:03 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:42011
+2026-05-29 12:34:03 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'remove_by_id'
+2026-05-29 12:34:03 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 12:34:07 [main] INFO  ServerNetwork - Получена команда сохранения с консоли сервера.
+2026-05-29 12:34:28 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 13:53:49 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 13:54:38 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1334
+2026-05-29 13:54:38 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'remove_by_id'
+2026-05-29 13:54:38 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 13:57:20 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1357
+2026-05-29 13:57:20 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'remove_by_id'
+2026-05-29 13:57:20 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 13:57:48 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1365
+2026-05-29 13:57:49 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'remove_by_id'
+2026-05-29 13:57:49 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 13:58:10 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 13:58:25 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 14:01:23 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:16468
+2026-05-29 14:01:23 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:01:23 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:01:27 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:16479
+2026-05-29 14:01:27 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:01:27 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:03:24 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:57225
+2026-05-29 14:03:24 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 14:03:24 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:03:29 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:57226
+2026-05-29 14:03:29 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 14:03:29 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:03:32 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:57227
+2026-05-29 14:03:32 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 14:03:32 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:03:36 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:57229
+2026-05-29 14:03:36 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 14:03:36 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:23:33 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 14:37:41 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 14:38:15 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:49156
+2026-05-29 14:38:15 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:38:15 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:38:42 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:49169
+2026-05-29 14:38:42 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:38:42 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:43:59 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 14:45:02 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 14:46:14 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1927
+2026-05-29 14:46:14 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:46:14 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:46:17 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1928
+2026-05-29 14:46:17 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:46:17 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:46:20 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1929
+2026-05-29 14:46:20 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:46:20 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:46:23 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1930
+2026-05-29 14:46:23 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:46:23 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:46:26 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:1931
+2026-05-29 14:46:26 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:46:26 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:46:33 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 14:53:58 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 14:54:43 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:2056
+2026-05-29 14:54:43 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:54:43 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:54:46 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:2057
+2026-05-29 14:54:46 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:54:46 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:54:49 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:2058
+2026-05-29 14:54:49 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:54:49 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:54:52 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:2059
+2026-05-29 14:54:52 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 14:54:52 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 14:55:28 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 15:01:30 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 15:02:49 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4170
+2026-05-29 15:02:49 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:02:49 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:02:58 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4171
+2026-05-29 15:02:58 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:02:58 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:03:03 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 15:06:26 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 15:07:09 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4243
+2026-05-29 15:07:09 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:07:09 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:07:13 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4244
+2026-05-29 15:07:14 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:07:14 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:07:16 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4247
+2026-05-29 15:07:16 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:07:16 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:09:12 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 15:09:22 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 15:09:46 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4378
+2026-05-29 15:09:46 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:09:46 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:09:50 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4385
+2026-05-29 15:09:50 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:09:50 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:09:53 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4386
+2026-05-29 15:09:53 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:09:53 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:10:00 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4389
+2026-05-29 15:10:01 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:10:01 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:10:05 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4422
+2026-05-29 15:10:05 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 15:10:05 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:10:08 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:4432
+2026-05-29 15:10:08 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 15:10:08 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:17:16 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5608
+2026-05-29 15:17:16 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 15:17:16 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:17:18 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5613
+2026-05-29 15:17:18 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 15:17:18 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:17:47 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5665
+2026-05-29 15:17:47 [main] INFO  ServerNetwork - Получен запрос [ID: 4]: Команда 'show'
+2026-05-29 15:17:47 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:17:57 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5677
+2026-05-29 15:17:57 [main] INFO  ServerNetwork - Получен запрос [ID: 5]: Команда 'show'
+2026-05-29 15:17:57 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:17:59 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5680
+2026-05-29 15:17:59 [main] INFO  ServerNetwork - Получен запрос [ID: 6]: Команда 'show'
+2026-05-29 15:17:59 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:18:01 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5681
+2026-05-29 15:18:01 [main] INFO  ServerNetwork - Получен запрос [ID: 7]: Команда 'show'
+2026-05-29 15:18:01 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:18:19 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
+2026-05-29 15:18:34 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-05-29 15:19:52 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5797
+2026-05-29 15:19:52 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:19:52 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:19:54 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5798
+2026-05-29 15:19:55 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:19:55 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 15:19:57 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:5799
+2026-05-29 15:19:57 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-05-29 15:19:57 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 16:00:15 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7795
+2026-05-29 16:00:15 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 16:00:15 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 16:00:18 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7796
+2026-05-29 16:00:18 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 16:00:18 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 16:00:21 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7797
+2026-05-29 16:00:21 [main] INFO  ServerNetwork - Получен запрос [ID: 2]: Команда 'show'
+2026-05-29 16:00:21 [main] INFO  ServerNetwork - Клиент отключился.
+2026-05-29 16:00:36 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:7798
+2026-05-29 16:00:36 [main] INFO  ServerNetwork - Получен запрос [ID: 3]: Команда 'show'
+2026-05-29 16:00:36 [main] INFO  ServerNetwork - Клиент отключился.
+2026-06-01 11:47:40 [main] INFO  ServerNetwork - Сервер успешно запущен и слушает порт 1234
+2026-06-01 11:48:03 [main] INFO  ServerNetwork - Клиент подключился: /127.0.0.1:42825
+2026-06-01 11:48:03 [main] INFO  ServerNetwork - Получен запрос [ID: 1]: Команда 'show'
+2026-06-01 11:48:03 [main] INFO  ServerNetwork - Клиент отключился.
+2026-06-01 11:48:08 [Thread-0] INFO  ServerNetwork - Закрытие серверного сокета
